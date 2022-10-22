@@ -1,47 +1,32 @@
-/*Define a class Greatest and define instance member function to find Largest among
-3 numbers using classes.*/
+/*Define a class Box and write a program to enter length, breadth and height and
+initialise objects using constructor also define member functions to calculate volume
+of the box.*/
 #include<iostream>
 using namespace std;
-class Greatest
+class Box
 {
     private:
-    int a,b,c,maxN;
+    int lenght,breadth,height;
+    int volume;
     public:
-    void setvalue(int x, int y, int z)
+    box(int x,int y,int z)
     {
-      a=x;
-      b=y;
-      c=z;
+        lenght=x;
+        breadth=y;
+        height=z;
     }
-    int geta()
+    int calculate_volume(int ,)
     {
-        return a;
+        return lenght*breadth*height;
     }
-    int getb()
+    void showvolum()
     {
-        return b;
-    }
-    int getc()
-    {
-        return c;
-    }
-    int getmax()
-    {
-        return maxN;
-    }
-    void calculatemax()
-    {
-        maxN=a>b?a>c?a:c:b>c?b:c;
+      cout<<calculate_volume();
     }
 };
 int main()
 {
-    Greatest g1,g2;
-    g2.setvalue(12,45,67);
-    g2.calculatemax();
-    g1.setvalue(12,34,33);
-    g1.calculatemax();
-    cout<<g1.geta()<<" "<<g1.getb()<<" "<<g1.getc()<<" "<<"LARGEST NUMBER "<<g1.getmax()<<endl;
-     cout<<g2.geta()<<" "<<g2.getb()<<" "<<g2.getc()<<" "<<"LARGEST NUMBER "<<g2.getmax();
-
+    Box b1(2,3,4);
+    b1.calculate_volume();
+    b1.showvolum();
 }

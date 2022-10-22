@@ -1,36 +1,54 @@
-/*Define a class Circle and define an instance member function to find the area of the
-circle.*/
+/*Define a class Bill and define its member function get() to take detail of customer ,
+calculateBill() function to calculate electricity bill using below tariff :
+Upto 100 unit RS. 1.20 per unit
+From 100 to 200 unit RS. 2 per unit*/
 #include<iostream>
 using namespace std;
-class Circle
+class Bill
 {
     private:
-    float r,A;
+    int customer_no;
+    char customer_name[20];
+    int bill_units;
+    double bill;
     public:
-    void setvalue(int x)
+    void get()
     {
-        r=x; 
+        cout<<"enter customer deteles below :: \n "<<endl;
+        cout<<"enter customer number :: ";
+        cin>>customer_no;
+        cout<<"\nenter customer name::";
+        cin>>customer_name;
+        cout<<"\nEnter no of units used ::";
+        cin>>bill_units;
     }
-    float getr()
+    void put()
     {
-        return r;
+        cout<<"\n\ncustomer number is : "<<customer_no;
+        cout<<"\n\ncustomer name is : "<<customer_name;
+        cout<<"\n\nNumber of units custumber : "<<bill_units<<endl;
+        cout<<"\nbill of custumer : "<<bill;
     }
-    float getarea()
+    void calc_bill()
     {
-        return A;
+        if(bill_units<=100)
+        bill=bill_units*1.20;
+        else if(bill_units<=200)
+        bill=100*1.20+(bill_units-100)*2;
+        else
+        bill=100*1.20+100*2+(bill_units-200)*3;
     }
-    void caculatearea()
-    {
-        A=3.14*r*r;
-    }
-};
+};  
 int main()
 {
-    Circle c1,c2;
-    c1.setvalue(5);
-    c2.setvalue(12);
-    c2.caculatearea();
-    c1.caculatearea();
-    cout<<"AREA OF CIRCLE IS  "<<c1.getr()<<" "<<"IS"<<" "<<c1.getarea()<<endl;
-    cout<<"AREA OF CIRCLE IS "<<c2.getr()<<" "<<"IS "<<" "<<c2.getarea();
+    Bill b1,b2;
+    b1.get();
+    b1.calc_bill();
+    b1.put();
+    cout<<"\n";
+    cout<<"************************"<<endl;
+    b2.get();
+    b2.calc_bill();
+    b2.put();
+    return 0;
 }

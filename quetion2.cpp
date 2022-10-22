@@ -1,30 +1,50 @@
-/*Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate
-number of instance member variables and also define instance member functions to
-set values for time and display values of time.*/
+/*Define a class Time to represent a time with instance variables h,m and s to store
+hour, minute and second. Also define following member functions
+a. void setTime(int,int,int)
+b. void showTime()
+c. void normalize()
+d. Time add(Time)*/
 #include<iostream>
 using namespace std;
 class Time
 {
     private:
-    int time,min,sec;
+    int HR,MIN,SEC;
     public:
-    
-        void settime(int x,int y,int z)
-        {
-            time=x;
-            min=y;
-            sec=z;
-        }
-        void timedisplay()
-        {
-            cout<<"time="<<time<<" "<<"min="<<min<<" "<<"sec="<<sec<<endl;
-        }
+    void setData(int x,int y,int z)
+    {
+        HR=x;
+        MIN=y;
+        SEC=z;
+    }
+    void showTime()
+    {
+        cout<<HR<<" " <<"HOURE : "<<MIN<<" "<<"MINUTE : "<<SEC<<" "  <<"SECOUND  "<<endl;
+    }
+    void normalize()
+    {
+        MIN=MIN+SEC/60;
+        SEC=SEC%60;
+        HR=HR+MIN/60;
+        MIN=MIN/60;
+    }
+    Time add(Time t)
+    {
+       Time temp;
+       temp.SEC=SEC+t.SEC;
+       temp.MIN=MIN+t.MIN;
+       temp.HR=HR+t.HR;
+       temp.normalize();
+       return (temp);
+    } 
 };
 int main()
 {
-    Time c1,c2;
-    c1.settime(12,34,56);
-    c2.settime(1,34,45);
-    c1.timedisplay();
-    c2.timedisplay();
+  Time t1,t2,t3;
+  t1.setData(4,56,37);
+  t2.setData(5,43,78);
+  t3=t1.add(t2);
+  t1.showTime();
+  t2.showTime();
+  t3.showTime();
 }

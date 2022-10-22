@@ -1,47 +1,30 @@
-/*Define a class Area and define instance member functions to find the area of the
-different shapes like square, rectangle , circle etc.*/
+/*10. Define a class StaticCount and create a static variable. Increment this variable in a
+function and call this 3 times and display the result.*/
 #include<iostream>
 using namespace std;
-class Area
+class StaticCount
 {
-    private:
-    float side,lenght,width,radius;
+   
     public:
-    void setside(float a)
+    int static count;
+    StaticCount()
     {
-        side=a;
+        count++;
     }
-    void setlengthwidth(float l,float w)
+    void intc_Counter()
     {
-        lenght=l;
-        width=w;
+       count;
     }
-    void setradius(float r)
+    int get_Counter()
     {
-        radius=r;
-    }
-    float areaofsquare()
-    {
-        return side*side;
-    }
-    float areofrectangle()
-    {
-        return lenght*width;
-    }
-    float areaofcircle()
-    {
-        return 3.14*radius;
+        return count;
+
     }
 };
+int StaticCount :: count;
 int main()
 {
-    Area a;
-    a.setside(4);
-    a.setlengthwidth(12,4);
-    a.setradius(8);
-    cout<<"area of square "<<a.areaofsquare()<<endl;
-    cout<<"area of rectangle "<<a.areofrectangle()<<endl;
-    cout<<"area of circle "<<a.areaofcircle();
-    return 0;
-
+    StaticCount c1,c2,c3;
+   cout<<"count"<<" " << c1.get_Counter();
+   return 0;
 }

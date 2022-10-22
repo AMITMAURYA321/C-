@@ -1,46 +1,26 @@
-/*Define a class ReverseNumber and define an instance member function to find
-Reverse of a Number using class.*/
+/*Define a class Date and write a program to Display Date and initialise date object
+using Constructors.*/
 #include<iostream>
 using namespace std;
-class ReverseNumber
+class Date
 {
     private:
-    int actuallNumber;
-    int reverseNumber;
+    int MM,DATE,YEAR;
     public:
-    void setactuallnumber(int x)
+    Date(int x,int y, int z)
     {
-        actuallNumber=x;
+        MM=x;
+        DATE=y;
+        YEAR=z;
     }
-    int getactuallNumber()
+    void display()
     {
-        return actuallNumber;
-    }
-    int getreverseNumber()
-    {
-        return reverseNumber;
-    }
-    void calculatereversenumber()
-    {
-        int r,y=0;
-        while(actuallNumber!=0)
-        {
-            r=actuallNumber%10;
-            y=y*10+r;
-            actuallNumber=actuallNumber/10;
-        }
-        reverseNumber=y;
-        
+        cout<<"\nENTERED DATE IS :: ";
+        cout<<MM<<"-"<<DATE<<"-"<<YEAR;
     }
 };
 int main()
 {
-    ReverseNumber r1,r2;
-    r1.setactuallnumber(4178);
-    r2.setactuallnumber(5456);
-    r1.calculatereversenumber();
-    r2.calculatereversenumber();
-    cout<<"reverse numbers "<<r1.getactuallNumber()<<r1.getreverseNumber()<<endl;
-    cout<<"reverse numbers "<<r2.getactuallNumber()<<r2.getreverseNumber();
-
+    Date d1(12,3,2013);
+    d1.display();
 }

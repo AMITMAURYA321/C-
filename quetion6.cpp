@@ -1,49 +1,41 @@
-/*Define a class Square to find the square of a number and write a C++ program to
-Count number of times a function is called.*/
+/*Define a class student and write a program to enter student details using constructor
+and define member function to display all the details.*/
 #include<iostream>
+#include<string>
 using namespace std;
-class Square
+class Student
 {
     private:
-    int a;
-    int b;
-    static int count;
+    char student_name;
+    int student_id;
+    int student_roll_no;
+    int student_phone_number;
     public:
-    
-    void seta(int x)
+    Student(char str,int x,int y,int z)
     {
-        a=x;
+        student_name=str;
+        student_id=x ;
+        student_roll_no=y;
+        student_phone_number=z;
     }
-    int geta()
+    void show_data()
     {
-        return a;
+        cout<<"student_name = "<<student_name<<endl<<"student_id = "<<student_id<<endl<<"student_roll_no = "<<student_roll_no<<endl<<"student_phone_number = "<<student_phone_number<<endl;
+    }
 
-    }
-    int getb()
-    {
-        return b;
-    }
-    int getcount()
-    {
-        return count++;
-    }
-    void calculateSquare()
-    {
-        b=a*a;
-    }
-    
 };
-int Square::count;
 int main()
 {
-  Square s1,s2,s3;
-  s1.seta(5);
-  s1.calculateSquare();
-  s2.seta(10);
-  s2.calculateSquare();
-  s3.seta(15);
-  s3.calculateSquare();
-  cout<<"NUMBER IS "<<s1.geta()<<" "<<"SQUARE IS "<<s1.getb()<<" "<<"FUNCTION COUNT IS  "<<s1.getcount()<<endl;
-  cout<<"NUMBER IS "<<s2.geta()<<" "<<"SQUARE IS "<<s2.getb()<<" "<<"FUNCTION COUNT IS  "<<s2.getcount()<<endl;
-  cout<<"NUMBER IS "<<s3.geta()<<" "<<"SQUARE IS "<<s3.getb()<<" "<<"FUNCTION COUNT IS  "<<s3.getcount();
+    cout<<"STUDENT 1 DETALIES"<<endl;
+    cout<<"###################################"<<endl;
+    Student s1('A',123,12,819296);
+    s1.show_data(); 
+    cout<<endl;
+
+
+
+    cout<<"STUDENT 2 DETALIES"<<endl;
+    cout<<"###################################"<<endl;
+    Student s2('B',413,352,3422);
+    s2.show_data();
 }

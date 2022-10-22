@@ -1,48 +1,36 @@
-/*Define a class Factorial and define an instance member function to find the Factorial
-of a number using class.*/
+/*Define a class Cube and calculate Volume of Cube and initialise it using constructor.*/
 #include<iostream>
 using namespace std;
-class Factorial
+class Cube
 {
-    private:
-    int n,fact;
-    public:
-    void setN(int x)
-    {
-        n=x;
-    }
-    int getN()
-    {
-        return n;
-    }
-    int getFactorial()
-    {
-        return fact;
+   public:
+   double side;
+   double volume()
+   {
+    return (side*side*side);
+   }
+   Cube(double side1)
+   {
 
-    }
-    void calculateFactorial()
-    {
-        int f=1,i;
-        if(n<=0)
-        {
-            fact=1;
-            return;
-        }
-        for( i=1;i<=n;i++)
-        {
-             f=f*i;
-        }
-        fact=f;
-    }
+    cout<<"CONSTURCTOR CALLED"<<endl;
+    side=side1;
+   }
+   Cube()
+   {
+    cout<<"DEFULT CONSTURCTOR CALLED"<<endl;
+   }
 };
 int main()
 {
-    Factorial f1,f2;
-    f1.setN(5);
-    f2.setN(6);
-    f2.calculateFactorial();
-    f1.calculateFactorial();
-    cout<<"factorial of "<<f1.getN()<<" is "<<f1.getFactorial()<<endl;
-    cout<<"factorial of "<<f2.getN()<<" is "<<f2.getFactorial();
-    return 0;
+    Cube c1(3.34);
+    Cube c2;
+    cout<<"\nthe side of the cube is" <<c1.side<<endl;
+    cout<<"\nthe volume of the first cube is :" << c1.volume()<<endl;
+    cout<<"\nENTER THE LENGHT OF SECOND CUBE IS.... "<<endl;
+    cin>>c2.side;
+    cout << "LENGHT OF SECOND CUBE IS =>"<< c2.volume()<<endl;
+
+    
+    
+        
 }
