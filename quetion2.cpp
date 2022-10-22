@@ -1,23 +1,30 @@
-// Define a function to find the highest value digit in a given number.
-int highestdigit(int num)
-{
-    int max=-1;
-    while(num)
-    {
-       if(max<num%10)
-       max=num%10;
-       num=num/10;
-    }
-    return max;
-}
+/*Define a class Time to represent Time (like 3 hr 45 min 20 sec). Declare appropriate
+number of instance member variables and also define instance member functions to
+set values for time and display values of time.*/
 #include<iostream>
 using namespace std;
-int highestdigit(int num);
+class Time
+{
+    private:
+    int time,min,sec;
+    public:
+    
+        void settime(int x,int y,int z)
+        {
+            time=x;
+            min=y;
+            sec=z;
+        }
+        void timedisplay()
+        {
+            cout<<"time="<<time<<" "<<"min="<<min<<" "<<"sec="<<sec<<endl;
+        }
+};
 int main()
 {
-    int num1;
-    cout<<"ENTER NUMBER"<<endl;
-    cin>>num1;
-    cout<<"HIGHT DIGITS "<<highestdigit(num1);
-    return 0;
+    Time c1,c2;
+    c1.settime(12,34,56);
+    c2.settime(1,34,45);
+    c1.timedisplay();
+    c2.timedisplay();
 }

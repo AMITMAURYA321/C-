@@ -1,42 +1,46 @@
-/*Define a function to check whether a given number is a term in a Fibonacci series or
-not.*/
+/*Define a class ReverseNumber and define an instance member function to find
+Reverse of a Number using class.*/
 #include<iostream>
 using namespace std;
-int fib(int n)
+class ReverseNumber
 {
- int f1=1,f2=1,temp;
- if(n<=2)
- return 1;
- for(int i=3;i<=n;i++)
- {
-    temp=f1+f2;
-    f1=f2;
-    f2=temp;
- }
- return f2;
-}
+    private:
+    int actuallNumber;
+    int reverseNumber;
+    public:
+    void setactuallnumber(int x)
+    {
+        actuallNumber=x;
+    }
+    int getactuallNumber()
+    {
+        return actuallNumber;
+    }
+    int getreverseNumber()
+    {
+        return reverseNumber;
+    }
+    void calculatereversenumber()
+    {
+        int r,y=0;
+        while(actuallNumber!=0)
+        {
+            r=actuallNumber%10;
+            y=y*10+r;
+            actuallNumber=actuallNumber/10;
+        }
+        reverseNumber=y;
+        
+    }
+};
 int main()
 {
-    int n,flag=0;
-    cout<<"ENTER A NUMBER ";
-    cin>>n;
-    cout<<"FIBONACCI SERIES==> ";
-    for(int i=1; ;i++)
-    {
-        int value=fib(i);
-        cout<<" "<<value ;
-        if(n==value)
-        {
-            flag=1;
-            break;
-        }
-        if(value > n)
-        break;
-    }
-    cout<<endl;
-    if(flag==1)
-    cout<<"THIS NUMBER IS IN FIBONACCI";
-    else
-    cout<<"THIS NUMBER NOT IN IS FIBONACCI";
-    return 0;
+    ReverseNumber r1,r2;
+    r1.setactuallnumber(4178);
+    r2.setactuallnumber(5456);
+    r1.calculatereversenumber();
+    r2.calculatereversenumber();
+    cout<<"reverse numbers "<<r1.getactuallNumber()<<r1.getreverseNumber()<<endl;
+    cout<<"reverse numbers "<<r2.getactuallNumber()<<r2.getreverseNumber();
+
 }

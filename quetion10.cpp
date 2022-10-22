@@ -1,22 +1,47 @@
-/*Write functions using function overloading to add two numbers having different data
-types.*/
+/*Define a class Area and define instance member functions to find the area of the
+different shapes like square, rectangle , circle etc.*/
 #include<iostream>
 using namespace std;
-int add(int a,int b)
+class Area
 {
-    return a+b;
-}
-float add(float j ,float k)
-{
-    return j+k;
-}
+    private:
+    float side,lenght,width,radius;
+    public:
+    void setside(float a)
+    {
+        side=a;
+    }
+    void setlengthwidth(float l,float w)
+    {
+        lenght=l;
+        width=w;
+    }
+    void setradius(float r)
+    {
+        radius=r;
+    }
+    float areaofsquare()
+    {
+        return side*side;
+    }
+    float areofrectangle()
+    {
+        return lenght*width;
+    }
+    float areaofcircle()
+    {
+        return 3.14*radius;
+    }
+};
 int main()
 {
-    int n,m,k,l;
-    cout<<"ENTER TWO NUMBERS";
-    cin>>n>>m;
-    cout<<"ENTER TWO NUMBERS";
-    cin>>k>>l;
-    cout<<"SUM OF TWO NUMBER"<<add(n,m)<<endl;
-    cout<<"SUM OF TWO NUMBER"<<add(k,l);
+    Area a;
+    a.setside(4);
+    a.setlengthwidth(12,4);
+    a.setradius(8);
+    cout<<"area of square "<<a.areaofsquare()<<endl;
+    cout<<"area of rectangle "<<a.areofrectangle()<<endl;
+    cout<<"area of circle "<<a.areaofcircle();
+    return 0;
+
 }

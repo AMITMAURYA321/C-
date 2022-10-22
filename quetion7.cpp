@@ -1,19 +1,47 @@
-//Write a function using the default argument that is able to add 2 or 3 numbers.
+/*Define a class Greatest and define instance member function to find Largest among
+3 numbers using classes.*/
 #include<iostream>
 using namespace std;
-int add(int a,int b,int c)
+class Greatest
 {
-    return a+b+c;
-}
-int add(int a,int b,int c=0);
+    private:
+    int a,b,c,maxN;
+    public:
+    void setvalue(int x, int y, int z)
+    {
+      a=x;
+      b=y;
+      c=z;
+    }
+    int geta()
+    {
+        return a;
+    }
+    int getb()
+    {
+        return b;
+    }
+    int getc()
+    {
+        return c;
+    }
+    int getmax()
+    {
+        return maxN;
+    }
+    void calculatemax()
+    {
+        maxN=a>b?a>c?a:c:b>c?b:c;
+    }
+};
 int main()
 {
-    int num1,num2,num3,total;
-    cout<<"ENTER TWO NUMBER";
-    cin>>num1>>num2;
-    cout<<"SUM OF TWO NUMBER "<<add(num1,num2)<<endl;
-    cout<<"ENTER THREE NUMBER ";
-    cin>>num1>>num2>>num3;
-    cout<<"SUM OF THREE NUMBER "<<add(num1,num2,num3);
-    return 0;
+    Greatest g1,g2;
+    g2.setvalue(12,45,67);
+    g2.calculatemax();
+    g1.setvalue(12,34,33);
+    g1.calculatemax();
+    cout<<g1.geta()<<" "<<g1.getb()<<" "<<g1.getc()<<" "<<"LARGEST NUMBER "<<g1.getmax()<<endl;
+     cout<<g2.geta()<<" "<<g2.getb()<<" "<<g2.getc()<<" "<<"LARGEST NUMBER "<<g2.getmax();
+
 }
