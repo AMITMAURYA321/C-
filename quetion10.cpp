@@ -1,14 +1,22 @@
-//Write a C++ program to add all the numbers of an array of size 10;
+/*Write functions using function overloading to add two numbers having different data
+types.*/
 #include<iostream>
 using namespace std;
+int add(int a,int b)
+{
+    return a+b;
+}
+float add(float j ,float k)
+{
+    return j+k;
+}
 int main()
 {
-    int a[10],b,sum=0;
-    cout<<"\nENTER 10 NUMBERS ";
-    for(int i=0;i<=10;i++)
-    cin>>a[i];
-    for(int i=0;i<10;i++)
-    sum=sum+a[i];
-    cout<<"SUM IS "<<sum;
-    return 0;
+    int n,m,k,l;
+    cout<<"ENTER TWO NUMBERS";
+    cin>>n>>m;
+    cout<<"ENTER TWO NUMBERS";
+    cin>>k>>l;
+    cout<<"SUM OF TWO NUMBER"<<add(n,m)<<endl;
+    cout<<"SUM OF TWO NUMBER"<<add(k,l);
 }

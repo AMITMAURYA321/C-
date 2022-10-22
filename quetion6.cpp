@@ -1,14 +1,19 @@
-//Write a C++ program to calculate an average of 3 numbers.
+//Define a function to swap data of two int variables using call by reference
 #include<iostream>
 using namespace std;
+
+int sawp(int &a,int &b)
+{
+    a=a+b;
+    b=a-b;
+    a=a-b;
+}
 int main()
 {
-    float num1,num2,num3,TOTAL,AVERAGE;
-    cout<<"ENTER THREE NUMBRE ";
-    cin>>num1;
-    cin>>num2;
-    cin>>num3;
-    TOTAL=num1+num2+num3;
-    AVERAGE=TOTAL/3;
-    cout<<"AVERAGE OF 3 NUMBER "<<AVERAGE;
+    int m,n;
+    cout<<"ENTER TWO NUMBER ";
+    cin>>m>>n;
+    sawp(m,n);
+    cout<<"NUMBER SWAPING "<<m<<" "<<n;
+    return 0;
 }

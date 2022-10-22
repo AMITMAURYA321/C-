@@ -1,15 +1,42 @@
-//Write a C++ program to calculate the volume of a cuboid.
+/*Define a function to check whether a given number is a term in a Fibonacci series or
+not.*/
 #include<iostream>
 using namespace std;
+int fib(int n)
+{
+ int f1=1,f2=1,temp;
+ if(n<=2)
+ return 1;
+ for(int i=3;i<=n;i++)
+ {
+    temp=f1+f2;
+    f1=f2;
+    f2=temp;
+ }
+ return f2;
+}
 int main()
 {
-    int l,w,h ,TOTAL;
-    cout<<"\nENTER THE LENGHT ";
-    cin>>l;
-    cout<<"\nENTER THE width ";
-    cin>>w;
-    cout<<"\nENTER THE hight "; 
-    cin>>h;
-    TOTAL=l*w*h;
-    cout<<"\nTHE VOLUME OF A CUBOID "<<TOTAL;
+    int n,flag=0;
+    cout<<"ENTER A NUMBER ";
+    cin>>n;
+    cout<<"FIBONACCI SERIES==> ";
+    for(int i=1; ;i++)
+    {
+        int value=fib(i);
+        cout<<" "<<value ;
+        if(n==value)
+        {
+            flag=1;
+            break;
+        }
+        if(value > n)
+        break;
+    }
+    cout<<endl;
+    if(flag==1)
+    cout<<"THIS NUMBER IS IN FIBONACCI";
+    else
+    cout<<"THIS NUMBER NOT IN IS FIBONACCI";
+    return 0;
 }
